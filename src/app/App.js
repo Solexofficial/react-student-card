@@ -18,8 +18,8 @@ function App() {
           }}
         >
           <Switch>
-            <Route path='/' exact component={Main} />
             <Route path='/student' component={Form} />
+            <Route path='/' component={Main} />
           </Switch>
         </div>
       </div>
