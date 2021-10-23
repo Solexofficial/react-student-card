@@ -1,7 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { getStorageData, setStorageData } from '../utils/storage';
 import TextField from '../components/textField';
+import Modal from '../components/modal';
 import validator from '../utils/validator';
 
 const Form = () => {
@@ -9,6 +11,7 @@ const Form = () => {
   const initialState = { firstName: '', secondName: '', birthYear: '', portfolioUrl: '' };
   const [data, setData] = useState(getStorageData('student') || initialState);
   const [errors, setErrors] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   const validate = () => {
     const errors = validator(data, validatorConfig);
@@ -53,10 +56,17 @@ const Form = () => {
   const handleSubmit = e => {
     e.preventDefault();
     handleSetStorage(data);
+    setShowModal(true);
+  };
+
+  const handleToggleShowModal = () => {
+    setShowModal(prevState => !prevState);
+    handleGoHome();
   };
 
   return (
     <>
+      <Modal visible={showModal} onShow={handleToggleShowModal} />
       <div
         style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '30%', minHeight: '100%' }}
       >
