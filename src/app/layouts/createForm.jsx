@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router';
-import { setStorageData } from '../utils/storage';
+import { getStorageData, setStorageData } from '../utils/storage';
 
 const CreateForm = () => {
   const history = useHistory();
@@ -19,8 +19,8 @@ const CreateForm = () => {
   };
   return (
     <>
-      <h1>Создать</h1>
-      <div className='btn-group'>
+      <h1>{getStorageData('student') ? 'Редактировать' : 'Создать'}</h1>
+      <div style={{ display: 'flex' }}>
         <button className='btn btn-primary mx-2' onClick={handleGoHome}>
           Назад
         </button>

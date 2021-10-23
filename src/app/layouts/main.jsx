@@ -7,10 +7,17 @@ const Main = () => {
   const data = getStorageData('student');
   return (
     <>
-      {data ? <StudentCard student={data} /> : <h5 className='m-5'>Нет данных</h5>}
+      {data ? (
+        <StudentCard student={data} />
+      ) : (
+        <>
+          <h1>Карточка студента</h1>
+          <h5 className='m-5'>Нет данных</h5>
+        </>
+      )}
       <Link to='/create'>
         <button className='btn btn-primary' type='button'>
-          Добавить
+          {data ? 'Редактировать' : 'Добавить'}
         </button>
       </Link>
     </>
