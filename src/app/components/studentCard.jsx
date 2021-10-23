@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import getAge from '../utils/getAge';
 
 const StudentCard = ({ student }) => {
   const { firstName, secondName, birthYear, portfolioUrl } = student;
@@ -15,7 +16,7 @@ const StudentCard = ({ student }) => {
         <strong>Фамилия: </strong> {secondName}
       </div>
       <div>
-        <strong>Год Рождения: </strong> {birthYear}
+        <strong>Год Рождения: </strong> {getAge(1995)}
       </div>
       <div>
         <strong>Портфолио: </strong> {portfolioUrl}
