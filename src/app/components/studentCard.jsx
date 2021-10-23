@@ -4,7 +4,6 @@ import getAge from '../utils/getAge';
 
 const StudentCard = ({ student }) => {
   const { firstName, secondName, birthYear, portfolioUrl } = student;
-  console.log(firstName, secondName, birthYear, portfolioUrl);
   return (
     <div style={{ marginBottom: 10 }}>
       <h1>Карточка студента</h1>
@@ -16,7 +15,7 @@ const StudentCard = ({ student }) => {
         <strong>Фамилия: </strong> {secondName}
       </div>
       <div>
-        <strong>Год Рождения: </strong> {getAge(1995)}
+        <strong>Год Рождения: </strong> {getAge(birthYear)}
       </div>
       <div>
         <strong>Портфолио: </strong> {portfolioUrl}
