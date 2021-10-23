@@ -18,7 +18,10 @@ const StudentCard = ({ student }) => {
         <strong>Год Рождения: </strong> {getAge(birthYear)}
       </div>
       <div>
-        <strong>Портфолио: </strong> {portfolioUrl}
+        <strong>Портфолио: </strong>{' '}
+        <a href={portfolioUrl} target='_blank' rel='noreferrer'>
+          {portfolioUrl}
+        </a>
       </div>
     </div>
   );
