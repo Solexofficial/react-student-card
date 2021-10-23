@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import CreateForm from './layouts/createForm';
+import Form from './layouts/form';
 import Main from './layouts/main';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         >
           <Switch>
             <Route path='/' exact component={Main} />
-            <Route path='/create' component={CreateForm} />
+            <Route path='/student' component={Form} />
           </Switch>
         </div>
       </div>

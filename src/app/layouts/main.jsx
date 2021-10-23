@@ -15,7 +15,7 @@ const Main = () => {
           <h5 className='m-5'>Нет данных</h5>
         </>
       )}
-      <Link to='/create'>
+      <Link to='/student'>
         <button className='btn btn-primary' type='button'>
           {data ? 'Редактировать' : 'Добавить'}
         </button>
